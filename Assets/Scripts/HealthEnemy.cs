@@ -8,6 +8,7 @@ public class HealthEnemy : MonoBehaviour
     [SerializeField] float currentHealth;
     [SerializeField] float standingTime;
     Enemy enemy;
+    Animator animator;
 
     public UnityEvent<GameObject> OnHitWithReference, OnDeathWithReference;
 
@@ -19,6 +20,8 @@ public class HealthEnemy : MonoBehaviour
     {
         maxHealth = currentHealth;
         enemy = GetComponent<Enemy>();
+        animator = enemy.GetComponent<Animator>();
+
     }
     private void Update()
     {
@@ -32,8 +35,9 @@ public class HealthEnemy : MonoBehaviour
             if (sTime <= 0f)
             {
                 isStanding = true;
-                transform.rotation = Quaternion.Euler(0, 0, 0);
+                //transform.rotation = Quaternion.Euler(0, 0, 0);
                 currentHealth = maxHealth;
+                animator.SetBool("IsStanding", isStanding);
 
             }
         }
@@ -57,8 +61,10 @@ public class HealthEnemy : MonoBehaviour
         if (currentHealth == 0)
         {
             sTime = standingTime;
-            transform.rotation = Quaternion.Euler(0, 0, 90f);
+            //transform.rotation = Quaternion.Euler(0, 0, 90f);
             isStanding = false;
+            animator.SetBool("IsStanding", isStanding);
+            animator.SetBool("Atakowanie", false);
         }
 
     }

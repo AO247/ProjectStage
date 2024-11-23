@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour
                 //print(weapon.IsAttacking());
                 coli.enabled = true;
                 circleColi.enabled = false;
-                if (weapon.GetPl() != null)
+                if (weapon.GetPl() != null && health.IsStanding())
                 {
                     weapon.Attack();
                 }
