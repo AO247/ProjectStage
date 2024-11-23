@@ -32,12 +32,15 @@ public class HealthEnemy : MonoBehaviour
                 sTime -= Time.deltaTime;
 
             }
+            if (sTime < 0.3f)
+            {
+                animator.SetBool("IsStanding", true);
+            }
             if (sTime <= 0f)
             {
                 isStanding = true;
-                //transform.rotation = Quaternion.Euler(0, 0, 0);
                 currentHealth = maxHealth;
-                animator.SetBool("IsStanding", isStanding);
+               
 
             }
         }
@@ -61,9 +64,8 @@ public class HealthEnemy : MonoBehaviour
         if (currentHealth == 0)
         {
             sTime = standingTime;
-            //transform.rotation = Quaternion.Euler(0, 0, 90f);
             isStanding = false;
-            animator.SetBool("IsStanding", isStanding);
+            animator.SetBool("IsStanding", false);
             animator.SetBool("Atakowanie", false);
         }
 
