@@ -34,4 +34,9 @@ public class HealthPlayer : MonoBehaviour
         }
 
     }
+    public float GetHP()
+    {
+        return currentHealth;
+    }
+    
 }

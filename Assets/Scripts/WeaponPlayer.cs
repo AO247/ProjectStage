@@ -25,6 +25,7 @@ public class WeaponPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print(_enemies.Count);
         if (delayTime > 0)
         {
             delayTime -= Time.deltaTime;

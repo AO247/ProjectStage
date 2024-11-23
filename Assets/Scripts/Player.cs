@@ -5,7 +5,6 @@ public class Player : MonoBehaviour
     [SerializeField] float movSpeed = 6f;
     [SerializeField] float acceleration = 10f; // Jak szybko postaæ siê rozpêdza
     [SerializeField] WeaponPlayer weapon;
-    float speedX, speedY;
     Rigidbody2D rb;
     SpriteRenderer rend;
     Vector2 currentVelocity = Vector2.zero;
