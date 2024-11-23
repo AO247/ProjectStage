@@ -8,7 +8,10 @@ public class WeaponEnemy : MonoBehaviour
     [SerializeField] float beforeAttackTime;
     [SerializeField] float afterAttackTime;
     [SerializeField] float knockback;
+    [SerializeField] GameObject enemy;
 
+    Animator animator;
+    
     bool isAttacking = false;
     bool attackStop = false;
     float baTime = 0f;
@@ -17,7 +20,7 @@ public class WeaponEnemy : MonoBehaviour
     float delayTime = 0f;
     void Start()
     {
-
+        animator = enemy.GetComponent<Animator>();
     }
     public void Attack()
     {
@@ -25,6 +28,7 @@ public class WeaponEnemy : MonoBehaviour
         {
             attackStop = true;
             baTime = beforeAttackTime;
+            animator.SetBool("Atakowanie", attackStop);
         }
 
     }
@@ -51,6 +55,7 @@ public class WeaponEnemy : MonoBehaviour
         {
             delayTime = delay;
             attackStop = false;
+            animator.SetBool("Atakowanie", false);
         }
 
         if (delayTime > 0)
