@@ -45,10 +45,11 @@ public class HealthEnemy : MonoBehaviour
         isDead = false;
     }
 
-    public void GetHit(float amount)
+    public void GetHit(float amount, float knockback)
     {
         if (isDead)
             return;
+        enemy.Knockback(knockback);
         if (currentHealth > 0)
         {
             currentHealth -= amount;

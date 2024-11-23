@@ -8,6 +8,7 @@ public class WeaponPlayer : MonoBehaviour
     [SerializeField] float beforeAttackTime;
     [SerializeField] float afterAttackTime;
     [SerializeField] float knockback;
+
     bool isAttacking = false;
     bool attackStop = false;
 
@@ -60,7 +61,7 @@ public class WeaponPlayer : MonoBehaviour
         {
             for (int i = 0; i < _enemies.Count; i++)
             {
-                _enemies[i].GetComponent<HealthEnemy>().GetHit(damage);
+                _enemies[i].GetComponent<HealthEnemy>().GetHit(damage, knockback);
             }
             isAttacking = false;
 

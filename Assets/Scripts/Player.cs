@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     Rigidbody2D rb;
     SpriteRenderer rend;
     Vector2 currentVelocity = Vector2.zero;
+    float knockTime = 0f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,34 +20,48 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Pobierz osie ruchu
-        float inputX = Input.GetAxisRaw("Horizontal");
-        float inputY = Input.GetAxisRaw("Vertical");
-        if(Input.GetButtonDown("Fire1"))
+        if (knockTime > 0f)
         {
-            weapon.Attack();
+            knockTime -= Time.deltaTime;
         }
-        // Utwórz wektor kierunku
-        Vector2 targetDirection = new Vector2(inputX, inputY);
-        // Jeœli jest ruch (kierunek ró¿ny od (0,0)), normalizuj kierunek i pomnó¿ przez prêdkoœæ
-        if (targetDirection.magnitude > 0)
+        else
         {
-            targetDirection = targetDirection.normalized * movSpeed;
-        }
-        currentVelocity = Vector2.Lerp(currentVelocity, targetDirection, acceleration * Time.deltaTime);
 
-        rb.linearVelocity = currentVelocity;
+            // Pobierz osie ruchu
+            float inputX = Input.GetAxisRaw("Horizontal");
+            float inputY = Input.GetAxisRaw("Vertical");
+            if (Input.GetButtonDown("Fire1"))
+            {
+                weapon.Attack();
+            }
+            // Utwórz wektor kierunku
+            Vector2 targetDirection = new Vector2(inputX, inputY);
+            // Jeœli jest ruch (kierunek ró¿ny od (0,0)), normalizuj kierunek i pomnó¿ przez prêdkoœæ
+            if (targetDirection.magnitude > 0)
+            {
+                targetDirection = targetDirection.normalized * movSpeed;
+            }
+            currentVelocity = Vector2.Lerp(currentVelocity, targetDirection, acceleration * Time.deltaTime);
 
-        // Flipy dla renderera
-        if (currentVelocity.x < 0) 
-        {
-            weapon.transform.rotation = Quaternion.Euler(0, 0, 180f);
-            rend.flipX = true; 
+            rb.linearVelocity = currentVelocity;
+
+            // Flipy dla renderera
+            if (currentVelocity.x < 0)
+            {
+                weapon.transform.rotation = Quaternion.Euler(0, 0, 180f);
+                rend.flipX = true;
+            }
+            else if (currentVelocity.x > 0)
+            {
+                weapon.transform.rotation = Quaternion.Euler(0, 0, 0);
+                rend.flipX = false;
+            }
         }
-        else if (currentVelocity.x > 0) 
-        {
-            weapon.transform.rotation = Quaternion.Euler(0, 0, 0);
-            rend.flipX = false; 
-        }
+    }
+    public void Knockback(float knockback, Collider2D other)
+    {
+        knockTime = 0.5f;
+        Vector2 knockbackDirection = (other.transform.position - transform.position).normalized;
+        rb.AddForce(-knockbackDirection * knockback, ForceMode2D.Impulse);
     }
 }

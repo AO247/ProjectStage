@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     CircleCollider2D circleColi;
     Vector2 currentVelocity = Vector2.zero;
     bool finish;
+    float knockTime = 0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,65 +29,73 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        if (health.GetHP() > 0 )
+        if (knockTime > 0f)
         {
-            //print(weapon.IsAttacking());
-            coli.enabled = true;
-            circleColi.enabled = false;
-            if (weapon.GetPl() != null)
-            {
-                weapon.Attack();
-            }
-            if (!weapon.IsAttacking())
-            {
-
-                Vector2 targetDirection = (player.transform.position - transform.position);
-
-                if (targetDirection.magnitude > 0.1f) // Ma³y margines dla unikniêcia drgañ
-                {
-                    targetDirection = targetDirection.normalized * movSpeed;
-                }
-                else
-                {
-                    targetDirection = Vector2.zero; // Obiekt przestaje siê poruszaæ, gdy jest wystarczaj¹co blisko gracza
-                }
-
-                currentVelocity = Vector2.Lerp(currentVelocity, targetDirection, acceleration * Time.deltaTime);
-
-                rb.linearVelocity = currentVelocity;
-
-                if (weapon != null)
-                {
-                    Vector2 lookDirection = player.transform.position - weapon.transform.position;
-                    float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
-                    weapon.transform.rotation = Quaternion.Euler(0, 0, angle);
-                }
-
-                if (currentVelocity.x < 0)
-                {
-                    rend.flipX = true;
-                }
-                else if (currentVelocity.x > 0)
-                {
-                    rend.flipX = false;
-                }
-            }else
-            {
-               rb.linearVelocity = Vector2.zero;
-
-            }
+            knockTime -= Time.deltaTime;
         }
         else
         {
-            rb.linearVelocity = Vector2.zero;
-            coli.enabled = false;
-            circleColi.enabled = true;
-            if(finish)
+            if (health.GetHP() > 0)
             {
-                if (Input.GetButtonDown("Fire3") && !health.IsStanding())
+                //print(weapon.IsAttacking());
+                coli.enabled = true;
+                circleColi.enabled = false;
+                if (weapon.GetPl() != null)
                 {
-                    print("JEEEJ");
-                    health.Dead();
+                    weapon.Attack();
+                }
+                if (!weapon.IsAttacking())
+                {
+
+                    Vector2 targetDirection = (player.transform.position - transform.position);
+
+                    if (targetDirection.magnitude > 0.1f) // Ma³y margines dla unikniêcia drgañ
+                    {
+                        targetDirection = targetDirection.normalized * movSpeed;
+                    }
+                    else
+                    {
+                        targetDirection = Vector2.zero; // Obiekt przestaje siê poruszaæ, gdy jest wystarczaj¹co blisko gracza
+                    }
+
+                    currentVelocity = Vector2.Lerp(currentVelocity, targetDirection, acceleration * Time.deltaTime);
+
+                    rb.linearVelocity = currentVelocity;
+
+                    if (weapon != null)
+                    {
+                        Vector2 lookDirection = player.transform.position - weapon.transform.position;
+                        float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
+                        weapon.transform.rotation = Quaternion.Euler(0, 0, angle);
+                    }
+
+                    if (currentVelocity.x < 0)
+                    {
+                        rend.flipX = true;
+                    }
+                    else if (currentVelocity.x > 0)
+                    {
+                        rend.flipX = false;
+                    }
+                }
+                else
+                {
+                    rb.linearVelocity = Vector2.zero;
+
+                }
+            }
+            else
+            {
+                rb.linearVelocity = Vector2.zero;
+                coli.enabled = false;
+                circleColi.enabled = true;
+                if (finish)
+                {
+                    if (Input.GetButtonDown("Fire3") && !health.IsStanding())
+                    {
+                        print("JEEEJ");
+                        health.Dead();
+                    }
                 }
             }
         }
@@ -105,5 +114,11 @@ public class Enemy : MonoBehaviour
         {
             finish = false;
         }
+    }
+    public void Knockback(float knockback)
+    {
+        knockTime = 0.5f;
+        Vector2 knockbackDirection = (player.transform.position - transform.position).normalized;
+        rb.AddForce(-knockbackDirection * knockback, ForceMode2D.Impulse);
     }
 }

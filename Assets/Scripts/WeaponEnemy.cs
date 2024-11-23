@@ -8,6 +8,7 @@ public class WeaponEnemy : MonoBehaviour
     [SerializeField] float beforeAttackTime;
     [SerializeField] float afterAttackTime;
     [SerializeField] float knockback;
+
     bool isAttacking = false;
     bool attackStop = false;
     float baTime = 0f;
@@ -61,7 +62,8 @@ public class WeaponEnemy : MonoBehaviour
             if (pl != null)
             {
                 print("Strimke");
-                pl.GetComponent<HealthPlayer>().GetHit(damage);
+                
+                pl.GetComponent<HealthPlayer>().GetHit(damage, knockback, GetComponent<Collider2D>());
             }
             isAttacking = false;
 

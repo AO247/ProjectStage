@@ -12,7 +12,12 @@ public class HealthPlayer : MonoBehaviour
 
     [SerializeField]
     private bool isDead = false;
+    Player player;
+    private void Start()
+    {
+        player = GetComponent<Player>();
 
+    }
     public void InitializeHealth(int healthValue)
     {
         currentHealth = healthValue;
@@ -20,12 +25,16 @@ public class HealthPlayer : MonoBehaviour
         isDead = false;
     }
 
-    public void GetHit(float amount)
+    public void GetHit(float amount, float knockback, Collider2D other)
     {
         if (isDead)
             return;
+        if(currentHealth > 0)
+        {
+            currentHealth -= amount;
+            player.Knockback(knockback, other);
+        }
 
-        currentHealth -= amount;
 
         if (currentHealth == 0)
         {

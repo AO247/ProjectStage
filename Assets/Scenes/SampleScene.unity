@@ -523,7 +523,7 @@ MonoBehaviour:
   delay: 0
   beforeAttackTime: 0.3
   afterAttackTime: 0.3
-  knockback: 0
+  knockback: 5
 --- !u!58 &692567509
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -897,7 +897,8 @@ MonoBehaviour:
   delay: 2
   beforeAttackTime: 0.5
   afterAttackTime: 0.5
-  knockback: 0
+  knockback: 6
+  enemy: {fileID: 1622592350}
 --- !u!60 &1111446672
 PolygonCollider2D:
   m_ObjectHideFlags: 0
