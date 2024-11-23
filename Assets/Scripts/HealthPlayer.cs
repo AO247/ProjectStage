@@ -10,8 +10,7 @@ public class HealthPlayer : MonoBehaviour
 
     public UnityEvent<GameObject> OnHitWithReference, OnDeathWithReference;
 
-    [SerializeField]
-    private bool isDead = false;
+    [SerializeField] private bool isDead = false;
     Player player;
     private void Start()
     {

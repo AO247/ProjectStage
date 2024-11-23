@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     SpriteRenderer rend;
     HealthEnemy health;
     Collider2D coli;
-    CircleCollider2D circleColi;
+    PolygonCollider2D polygonColi;
     Vector2 currentVelocity = Vector2.zero;
     bool finish;
     float knockTime = 0f;
@@ -24,7 +24,7 @@ public class Enemy : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         health = GetComponent<HealthEnemy>();
         coli = GetComponent<Collider2D>();
-        circleColi = GetComponent<CircleCollider2D>();
+        polygonColi = GetComponent<PolygonCollider2D>();
     }
 
     void Update()
@@ -39,8 +39,8 @@ public class Enemy : MonoBehaviour
             {
                 //print(weapon.IsAttacking());
                 coli.enabled = true;
-                circleColi.enabled = false;
-                if (weapon.GetPl() != null)
+                polygonColi.enabled = false;
+                if (weapon.GetPl() != null && health.IsStanding())
                 {
                     weapon.Attack();
                 }
@@ -88,7 +88,7 @@ public class Enemy : MonoBehaviour
             {
                 rb.linearVelocity = Vector2.zero;
                 coli.enabled = false;
-                circleColi.enabled = true;
+                polygonColi.enabled = true;
                 if (finish)
                 {
                     if (Input.GetButtonDown("Fire3") && !health.IsStanding())
