@@ -11,19 +11,21 @@ public class WeaponPlayer : MonoBehaviour
 
     bool isAttacking = false;
     bool attackStop = false;
-
+    GameObject player;
+    Animator animator;
     float baTime = 0f;
     float aaTime = 0f;
     float delayTime = 0f;
     List<Collider2D> _enemies = new List<Collider2D>();    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        animator = GameObject.FindWithTag("Player").GetComponent<Animator>();
     }
     public void Attack()
     {
         if (delayTime <= 0 && !attackStop)
         {
+            animator.SetBool("Szpadel_Atak", true);
             attackStop = true;
             baTime = beforeAttackTime;
         }
@@ -51,11 +53,13 @@ public class WeaponPlayer : MonoBehaviour
         {
             delayTime = delay;
             attackStop = false;
+            animator.SetBool("Szpadel_Atak", false);
+
         }
 
         if (delayTime > 0)
         {
-            delayTime -= Time.deltaTime;
+            delayTime -= Time.deltaTime;    
         }
         if (isAttacking)
         {

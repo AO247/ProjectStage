@@ -9,18 +9,30 @@ public class Player : MonoBehaviour
     SpriteRenderer rend;
     Vector2 currentVelocity = Vector2.zero;
     float knockTime = 0f;
-
+    float finishTime = 0f;
+    Animator animator;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
       rb = GetComponent<Rigidbody2D>();  
       rend = rb.GetComponent<SpriteRenderer>();
+      animator = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (knockTime > 0f)
+        if (finishTime > 0f)
+        {
+            finishTime -= Time.deltaTime;
+            if (finishTime <= 0f)
+            {
+                animator.SetBool("Finisher", false);
+            }
+        }
+
+        else if (knockTime > 0f)
         {
             knockTime -= Time.deltaTime;
         }
@@ -34,6 +46,8 @@ public class Player : MonoBehaviour
             {
                 weapon.Attack();
             }
+            
+
             // Utwórz wektor kierunku
             Vector2 targetDirection = new Vector2(inputX, inputY);
             // Jeœli jest ruch (kierunek ró¿ny od (0,0)), normalizuj kierunek i pomnó¿ przez prêdkoœæ
@@ -63,5 +77,16 @@ public class Player : MonoBehaviour
         knockTime = 0.5f;
         Vector2 knockbackDirection = (other.transform.position - transform.position).normalized;
         rb.AddForce(-knockbackDirection * knockback, ForceMode2D.Impulse);
+    }
+    public void Finisher()
+    {
+        finishTime = 1.0f;
+        rb.linearVelocity = Vector2.zero;
+        animator.SetBool("Finisher", true);
+
+    }
+    public float GetFinishTime()
+    {
+        return finishTime;
     }
 }

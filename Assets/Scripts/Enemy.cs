@@ -91,10 +91,15 @@ public class Enemy : MonoBehaviour
                 polygonColi.enabled = true;
                 if (finish)
                 {
-                    if (Input.GetButtonDown("Fire3") && !health.IsStanding())
+                    if (Input.GetButtonDown("Fire3") && !health.IsStanding() && !health.IsDead())
                     {
                         print("JEEEJ");
-                        health.Dead();
+                        if(player.GetComponent<Player>().GetFinishTime() <= 0)
+                        {
+                            player.GetComponent<Player>().Finisher();
+                            health.Dead();
+                        }
+                        
                     }
                 }
             }

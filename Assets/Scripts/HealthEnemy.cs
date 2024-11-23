@@ -7,6 +7,8 @@ public class HealthEnemy : MonoBehaviour
 {
     [SerializeField] float currentHealth;
     [SerializeField] float standingTime;
+    [SerializeField] Renderer pool;
+
     Enemy enemy;
     Animator animator;
 
@@ -73,6 +75,7 @@ public class HealthEnemy : MonoBehaviour
     public void Dead()
     {
         isDead = true;
+        pool.enabled = true;
         animator.SetBool("IsStanding", false);
 
     }
