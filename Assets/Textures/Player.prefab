@@ -152,7 +152,7 @@ MonoBehaviour:
   delay: 0
   beforeAttackTime: 0.04
   afterAttackTime: 0.2
-  knockback: 3
+  knockback: 2
   weaponType: 1
 --- !u!60 &6922229188561893497
 PolygonCollider2D:

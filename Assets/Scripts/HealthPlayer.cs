@@ -30,8 +30,13 @@ public class HealthPlayer : MonoBehaviour
             return;
         if(currentHealth > 0)
         {
-            currentHealth -= amount;
-            player.Knockback(knockback, other);
+            if (player.GetFinishTime() <= 0)
+            {
+                currentHealth -= amount;
+                player.Knockback(knockback, other);
+                
+            }
+
         }
 
 

@@ -62,12 +62,30 @@ public class Player : MonoBehaviour
 
                 }
             }
-            else if (knockTime > 0f)
+            if (knockTime > 0f)
             {
-                knockTime -= Time.deltaTime;
+                if (knockTime > 0.9f)
+                {
+                    knockTime -= Time.deltaTime;
+                    rend.material.color = Color.red;
+                }
+                else
+                {
+                    rend.material.color = Color.white;
+
+                }
+                rb.linearVelocity *= new Vector2(0.98f, 0.98f);
+
+                if (rb.linearVelocity.magnitude < 0.1f)
+                {
+                    knockTime = 0f;
+                }
+
             }
             else
             {
+                rend.material.color = Color.white;
+
                 // Pobierz osie ruchu
                 float inputX = Input.GetAxisRaw("Horizontal");
                 float inputY = Input.GetAxisRaw("Vertical");
@@ -77,7 +95,11 @@ public class Player : MonoBehaviour
                 }
                 if (!weapon.GetAttackStop())
                 {
-                    animator.Play(weapon.GetWeaponType().ToString() + "_MOVE");
+                    if(weapon.GetWeaponType() != -1)
+                    {
+                        animator.Play(weapon.GetWeaponType().ToString() + "_MOVE");
+                    }
+                    
 
                     //if (rb.linearVelocity != Vector2.zero)
                     //{
@@ -116,7 +138,7 @@ public class Player : MonoBehaviour
     }
     public void Knockback(float knockback, Collider2D other)
     {
-        knockTime = 0.5f;
+        knockTime = 1f;
         Vector2 knockbackDirection = (other.transform.position - transform.position).normalized;
         rb.AddForce(-knockbackDirection * knockback, ForceMode2D.Impulse);
     }

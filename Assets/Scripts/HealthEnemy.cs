@@ -9,6 +9,8 @@ public class HealthEnemy : MonoBehaviour
     [SerializeField] float standingTime;
     [SerializeField] Renderer pool;
     [SerializeField] ParticleSystem blood;
+    [SerializeField] ParticleSystem hit;
+
     Enemy enemy;
     Animator animator;
 
@@ -62,6 +64,7 @@ public class HealthEnemy : MonoBehaviour
         enemy.Knockback(knockback);
         if (currentHealth > 0)
         {
+            hit.Play();
             currentHealth -= amount;
         }
         if (currentHealth <= 0)
