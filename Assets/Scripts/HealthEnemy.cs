@@ -73,6 +73,8 @@ public class HealthEnemy : MonoBehaviour
     public void Dead()
     {
         isDead = true;
+        animator.SetBool("IsStanding", false);
+
     }
 
     public float GetHP()

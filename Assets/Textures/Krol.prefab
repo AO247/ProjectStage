@@ -293,7 +293,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 100
   m_LinearDamping: 0
   m_AngularDamping: 0
   m_GravityScale: 0
@@ -400,13 +400,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.75618654, y: 0.1295681}
+    - - {x: -0.752899, y: 0.24134326}
       - {x: -0.7602474, y: -0.13293123}
-      - {x: -0.75460035, y: -0.46662426}
-      - {x: 0.035640955, y: -0.47877383}
-      - {x: 0.8130394, y: -0.45850253}
-      - {x: 0.82928324, y: 0.12817252}
-      - {x: 0.20885134, y: 0.1255076}
+      - {x: -0.78090036, y: -0.3614241}
+      - {x: 0.002765894, y: -0.36371124}
+      - {x: 0.8261894, y: -0.35001504}
+      - {x: 0.8194208, y: 0.29254746}
+      - {x: 0.14310133, y: 0.2635827}
   m_UseDelaunayMesh: 0
 --- !u!95 &620845545759511559
 Animator:

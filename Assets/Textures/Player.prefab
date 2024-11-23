@@ -85,7 +85,7 @@ MonoBehaviour:
   delay: 0
   beforeAttackTime: 0.3
   afterAttackTime: 0.3
-  knockback: 2
+  knockback: 5
 --- !u!1 &6579111516899539299
 GameObject:
   m_ObjectHideFlags: 0
