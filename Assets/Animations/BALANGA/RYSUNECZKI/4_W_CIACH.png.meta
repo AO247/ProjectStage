@@ -125,9 +125,9 @@ TextureImporter:
       name: whip_0
       rect:
         serializedVersion: 2
-        x: 10
+        x: 0
         y: 0
-        width: 31
+        width: 41
         height: 20
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -147,9 +147,9 @@ TextureImporter:
       name: whip_1
       rect:
         serializedVersion: 2
-        x: 50
+        x: 41
         y: 0
-        width: 31
+        width: 41
         height: 20
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -169,9 +169,9 @@ TextureImporter:
       name: whip_2
       rect:
         serializedVersion: 2
-        x: 90
+        x: 82
         y: 0
-        width: 31
+        width: 41
         height: 20
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -191,9 +191,9 @@ TextureImporter:
       name: whip_3
       rect:
         serializedVersion: 2
-        x: 130
+        x: 123
         y: 0
-        width: 30
+        width: 37
         height: 20
       alignment: 0
       pivot: {x: 0.5, y: 0.5}

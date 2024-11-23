@@ -8,10 +8,9 @@ public class WeaponPlayer : MonoBehaviour
     [SerializeField] float beforeAttackTime;
     [SerializeField] float afterAttackTime;
     [SerializeField] float knockback;
-
+    [SerializeField] int weaponType;
     bool isAttacking = false;
     bool attackStop = false;
-    int weaponType = 0;
 
     GameObject player;
     Animator animator;
@@ -31,37 +30,17 @@ public class WeaponPlayer : MonoBehaviour
             
             attackStop = true;
             baTime = beforeAttackTime;
-            animator.SetBool("Atakowanie", true);
+            animator.Play(weaponType.ToString() + "_CIACH");
+
         }
 
     }
 
-    public void ChangeWeapon()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            weaponType = 1;
-            animator.SetInteger("Bron", weaponType);
-        } else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            weaponType = 2;
-            animator.SetInteger("Bron", weaponType);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            weaponType = 3;
-            animator.SetInteger("Bron", weaponType);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            weaponType = 4;
-            animator.SetInteger("Bron", weaponType);
-        }
-    }
+    
     // Update is called once per frame
     void Update()
     {
-        ChangeWeapon();
+
         if (baTime > 0)
         {
             baTime -= Time.deltaTime;
@@ -79,13 +58,10 @@ public class WeaponPlayer : MonoBehaviour
         }
         else if (aaTime <= 0 && baTime == 0 && attackStop == true)
         {
-            animator.SetBool("Atakowanie", false);
-
             delayTime = delay;
             attackStop = false;
 
         }
-
         if (delayTime > 0)
         {
             delayTime -= Time.deltaTime;    
@@ -115,5 +91,13 @@ public class WeaponPlayer : MonoBehaviour
         {
             _enemies.Remove(other);
         }
+    }
+    public bool GetAttackStop()
+    {
+        return attackStop;
+    }
+    public int GetWeaponType()
+    {
+        return weaponType;
     }
 }

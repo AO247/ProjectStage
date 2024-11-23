@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     Vector2 currentVelocity = Vector2.zero;
     bool finish;
     float knockTime = 0f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -25,13 +26,30 @@ public class Enemy : MonoBehaviour
         health = GetComponent<HealthEnemy>();
         coli = GetComponent<Collider2D>();
         polygonColi = GetComponent<PolygonCollider2D>();
+
     }
 
     void Update()
     {
         if (knockTime > 0f)
         {
-            knockTime -= Time.deltaTime;
+            if (knockTime > 0.9f)
+            {
+                knockTime -= Time.deltaTime;
+                rend.material.color = Color.red;
+            }
+            else
+            {
+                rend.material.color = Color.white;
+
+            }
+            rb.linearVelocity *= new Vector2(0.98f, 0.98f);
+
+            if (rb.linearVelocity.magnitude < 0.1f)
+            {
+                knockTime = 0f;
+            }
+
         }
         else
         {
@@ -93,11 +111,11 @@ public class Enemy : MonoBehaviour
                 {
                     if (Input.GetButtonDown("Fire3") && !health.IsStanding() && !health.IsDead())
                     {
-                        print("JEEEJ");
                         if(player.GetComponent<Player>().GetFinishTime() <= 0)
                         {
                             player.GetComponent<Player>().Finisher();
                             health.Dead();
+                            rend.material.color = Color.white;
                         }
                         
                     }
@@ -122,7 +140,7 @@ public class Enemy : MonoBehaviour
     }
     public void Knockback(float knockback)
     {
-        knockTime = 0.5f;
+        knockTime = 1;
         Vector2 knockbackDirection = (player.transform.position - transform.position).normalized;
         rb.AddForce(-knockbackDirection * knockback, ForceMode2D.Impulse);
     }

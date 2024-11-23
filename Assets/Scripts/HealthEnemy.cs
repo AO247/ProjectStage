@@ -8,7 +8,7 @@ public class HealthEnemy : MonoBehaviour
     [SerializeField] float currentHealth;
     [SerializeField] float standingTime;
     [SerializeField] Renderer pool;
-
+    [SerializeField] ParticleSystem blood;
     Enemy enemy;
     Animator animator;
 
@@ -16,6 +16,7 @@ public class HealthEnemy : MonoBehaviour
 
     [SerializeField]
     private bool isDead = false, isStanding = true;
+    
     float sTime = 0f;
     float maxHealth;
     private void Start()
@@ -63,12 +64,16 @@ public class HealthEnemy : MonoBehaviour
         {
             currentHealth -= amount;
         }
-        if (currentHealth == 0)
+        if (currentHealth <= 0)
         {
             sTime = standingTime;
             isStanding = false;
             animator.SetBool("IsStanding", false);
             animator.SetBool("Atakowanie", false);
+            if(amount > 30)
+            {
+                Dead();
+            }
         }
 
     }
@@ -77,6 +82,7 @@ public class HealthEnemy : MonoBehaviour
         isDead = true;
         pool.enabled = true;
         animator.SetBool("IsStanding", false);
+        blood.Play();
 
     }
 
