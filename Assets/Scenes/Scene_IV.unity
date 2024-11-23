@@ -1232,6 +1232,8 @@ MonoBehaviour:
   dialogueSoundClip:
   - {fileID: 8300000, guid: ec0abc8a0775030428e3b6fbf8844031, type: 3}
   - {fileID: 8300000, guid: d1b358364d2d29f41bcaf05cd5069d1d, type: 3}
+  _enemySpawnNumber: 0
+  enemyPrefab: {fileID: 0}
 --- !u!114 &793848503
 MonoBehaviour:
   m_ObjectHideFlags: 0

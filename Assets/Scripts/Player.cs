@@ -11,7 +11,6 @@ public class Player : MonoBehaviour
     [SerializeField] WeaponPlayer weapon3;
     [SerializeField] WeaponPlayer weapon4;
     [SerializeField] WeaponPlayer weapon;
-    [SerializeField] int weaponType = 0;
     Rigidbody2D rb;
     SpriteRenderer rend;
     HealthPlayer health;
@@ -152,5 +151,10 @@ public class Player : MonoBehaviour
     public float GetFinishTime()
     {
         return finishTime;
+    }
+
+    public Vector2 GetVelocity()
+    {
+        return rb.linearVelocity;
     }
 }

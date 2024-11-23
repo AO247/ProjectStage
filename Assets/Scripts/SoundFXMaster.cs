@@ -17,7 +17,7 @@ public class SoundFXMaster : MonoBehaviour
 
    }
 
-   public void PlaySoundFXClip(AudioClip audioClip, Transform spawnTransform, float volume)
+   public bool PlaySoundFXClip(AudioClip audioClip, Transform spawnTransform, float volume)
    {
         AudioSource audioSource = Instantiate(soundFXObject, spawnTransform.position, Quaternion.identity);
 
@@ -30,6 +30,7 @@ public class SoundFXMaster : MonoBehaviour
         float clipLength = audioSource.clip.length;
 
         Destroy(audioSource.gameObject, clipLength);
+        return true;
    }
 
 }

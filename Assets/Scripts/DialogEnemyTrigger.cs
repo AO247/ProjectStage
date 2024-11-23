@@ -6,7 +6,7 @@ public class DialogEnemyTrigger : MonoBehaviour
     List<GameObject> _enemies = new List<GameObject>();
 
     public DialogScript _dialog;
-
+    bool _done = false;
 void Awake()
 {
     _dialog = GetComponent<DialogScript>();
@@ -17,11 +17,16 @@ void Awake()
 }
     void Update()
     {
-         _enemies = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
-        foreach (GameObject enemy in _enemies) {
-            if(enemy.GetComponent<HealthEnemy>().IsStanding() == false)
+        _enemies = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
+        foreach (GameObject enemy in _enemies)
+        {
+            if (enemy.GetComponent<HealthEnemy>().IsStanding() == false)
             {
-                _dialog.StartDialog();
+                if (!_done)
+                {
+                    _dialog.StartDialog();
+                    _done = true;
+                }
             }
         }
     }

@@ -84,9 +84,10 @@ public class HealthEnemy : MonoBehaviour
     {
         isDead = true;
         pool.enabled = true;
+        currentHealth = 0;
+        isStanding = false;
         animator.SetBool("IsStanding", false);
         blood.Play();
-
     }
 
     public float GetHP()

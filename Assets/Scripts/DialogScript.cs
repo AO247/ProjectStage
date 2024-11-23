@@ -16,7 +16,7 @@ public class DialogScript : MonoBehaviour
 
     [SerializeField] public GameObject enemyPrefab;
 
-
+    bool _done = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,18 +26,7 @@ public class DialogScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F))
-        {
-            if(textComponent.text == lines[index])
-            {
-                NextLine();
-            }
-            else
-            {
-                StopAllCoroutines();
-                textComponent.text = lines[index];
-            }
-        }
+        NextLine();
     }
     public void StartDialog()
     {
@@ -57,20 +46,25 @@ public class DialogScript : MonoBehaviour
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
+        _done = true;
     }
 
     void NextLine(){
-        if (index < lines.Length - 1)
+        if (_done)
         {
-            index++;
-            SoundFXMaster.instance.PlaySoundFXClip(dialogueSoundClip[index], transform, 1f);
-            textComponent.text = string.Empty;
-            StartCoroutine(TypeLine());
-            
-        }
-        else
-        {
-            gameObject.SetActive(false);
+            _done = false;
+            if (index < lines.Length - 1)
+            {
+                index++;
+                SoundFXMaster.instance.PlaySoundFXClip(dialogueSoundClip[index], transform, 1f);
+                textComponent.text = string.Empty;
+                StartCoroutine(TypeLine());
+
+            }
+            else
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 
