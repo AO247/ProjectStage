@@ -11,8 +11,11 @@ public class WeaponPlayer : MonoBehaviour
 
     bool isAttacking = false;
     bool attackStop = false;
+    int weaponType = 0;
+
     GameObject player;
     Animator animator;
+
     float baTime = 0f;
     float aaTime = 0f;
     float delayTime = 0f;
@@ -32,9 +35,33 @@ public class WeaponPlayer : MonoBehaviour
         }
 
     }
+
+    public void ChangeWeapon()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            weaponType = 1;
+            animator.SetInteger("Bron", weaponType);
+        } else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            weaponType = 2;
+            animator.SetInteger("Bron", weaponType);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            weaponType = 3;
+            animator.SetInteger("Bron", weaponType);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            weaponType = 4;
+            animator.SetInteger("Bron", weaponType);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
+        ChangeWeapon();
         if (baTime > 0)
         {
             baTime -= Time.deltaTime;
@@ -72,6 +99,7 @@ public class WeaponPlayer : MonoBehaviour
             isAttacking = false;
 
         }
+
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
