@@ -7,7 +7,7 @@ public class HealthEnemy : MonoBehaviour
 {
     [SerializeField] float currentHealth;
     [SerializeField] float standingTime;
-    [SerializeField] Enemy enemy;
+    Enemy enemy;
 
     public UnityEvent<GameObject> OnHitWithReference, OnDeathWithReference;
 

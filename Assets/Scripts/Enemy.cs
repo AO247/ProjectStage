@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -29,43 +30,50 @@ public class Enemy : MonoBehaviour
     {
         if (health.GetHP() > 0 )
         {
+            //print(weapon.IsAttacking());
             coli.enabled = true;
             circleColi.enabled = false;
-            // Oblicz wektor kierunku: ró¿nica miêdzy pozycj¹ gracza a aktualn¹ pozycj¹ obiektu
-            Vector2 targetDirection = (player.transform.position - transform.position);
-
-            // Normalizuj kierunek i przeskaluj go na podstawie prêdkoœci tylko jeœli obiekt nie jest dok³adnie w pozycji gracza
-            if (targetDirection.magnitude > 0.1f) // Ma³y margines dla unikniêcia drgañ
+            if (weapon.GetPl() != null)
             {
-                targetDirection = targetDirection.normalized * movSpeed;
+                weapon.Attack();
             }
-            else
+            if (!weapon.IsAttacking())
             {
-                targetDirection = Vector2.zero; // Obiekt przestaje siê poruszaæ, gdy jest wystarczaj¹co blisko gracza
-            }
 
-            // P³ynna zmiana prêdkoœci
-            currentVelocity = Vector2.Lerp(currentVelocity, targetDirection, acceleration * Time.deltaTime);
+                Vector2 targetDirection = (player.transform.position - transform.position);
 
-            // Aktualizacja prêdkoœci Rigidbody
-            rb.linearVelocity = currentVelocity;
+                if (targetDirection.magnitude > 0.1f) // Ma³y margines dla unikniêcia drgañ
+                {
+                    targetDirection = targetDirection.normalized * movSpeed;
+                }
+                else
+                {
+                    targetDirection = Vector2.zero; // Obiekt przestaje siê poruszaæ, gdy jest wystarczaj¹co blisko gracza
+                }
 
-            // Obrót broni w kierunku gracza
-            if (weapon != null)
+                currentVelocity = Vector2.Lerp(currentVelocity, targetDirection, acceleration * Time.deltaTime);
+
+                rb.linearVelocity = currentVelocity;
+
+                if (weapon != null)
+                {
+                    Vector2 lookDirection = player.transform.position - weapon.transform.position;
+                    float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
+                    weapon.transform.rotation = Quaternion.Euler(0, 0, angle);
+                }
+
+                if (currentVelocity.x < 0)
+                {
+                    rend.flipX = true;
+                }
+                else if (currentVelocity.x > 0)
+                {
+                    rend.flipX = false;
+                }
+            }else
             {
-                Vector2 lookDirection = player.transform.position - weapon.transform.position;
-                float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
-                weapon.transform.rotation = Quaternion.Euler(0, 0, angle);
-            }
+               rb.linearVelocity = Vector2.zero;
 
-            // Flipy dla renderera
-            if (currentVelocity.x < 0)
-            {
-                rend.flipX = true;
-            }
-            else if (currentVelocity.x > 0)
-            {
-                rend.flipX = false;
             }
         }
         else
