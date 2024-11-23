@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 0915d8c0d8a12594d90f6056fd8b87b2
+guid: c42dd869ac6a0124faf09ce8703989fa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8201917269680337280
-    second: KingAni_0
-  - first:
-      213: 5644705244228129953
-    second: KingAni_1
-  - first:
-      213: 1975540388676444866
-    second: KingAni_2
+      213: -723880230554330960
+    second: kamyczek_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -119,67 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: KingAni_0
+      name: kamyczek_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 0
-        width: 20
-        height: 16
+        width: 16
+        height: 13
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 08ecf87e2bfec2e80800000000000000
-      internalID: -8201917269680337280
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: KingAni_1
-      rect:
-        serializedVersion: 2
-        x: 28
-        y: 0
-        width: 20
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1a490004385065e40800000000000000
-      internalID: 5644705244228129953
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: KingAni_2
-      rect:
-        serializedVersion: 2
-        x: 49
-        y: 0
-        width: 23
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2c22f7244878a6b10800000000000000
-      internalID: 1975540388676444866
+      spriteID: 0b891edf3c244f5f0800000000000000
+      internalID: -723880230554330960
       vertices: []
       indices: 
       edges: []
@@ -188,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: bc1dcbbc667d5174897127b91c993683
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -198,9 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      KingAni_0: -8201917269680337280
-      KingAni_1: 5644705244228129953
-      KingAni_2: 1975540388676444866
+      kamyczek_0: -723880230554330960
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

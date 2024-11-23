@@ -1,16 +1,19 @@
 fileFormatVersion: 2
-guid: 0915d8c0d8a12594d90f6056fd8b87b2
+guid: b023db5ced4ea3b499bb7918a885961b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8201917269680337280
-    second: KingAni_0
+      213: 6389623511445238630
+    second: lincolnTreptanie_0
   - first:
-      213: 5644705244228129953
-    second: KingAni_1
+      213: 5844970366064645903
+    second: lincolnTreptanie_1
   - first:
-      213: 1975540388676444866
-    second: KingAni_2
+      213: -8091939155492224139
+    second: lincolnTreptanie_2
+  - first:
+      213: -2704529893067869861
+    second: lincolnTreptanie_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -119,67 +122,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: KingAni_0
+      name: lincolnTreptanie_0
       rect:
         serializedVersion: 2
         x: 1
         y: 0
-        width: 20
-        height: 16
+        width: 19
+        height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 08ecf87e2bfec2e80800000000000000
-      internalID: -8201917269680337280
+      spriteID: 6637d20eab08ca850800000000000000
+      internalID: 6389623511445238630
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KingAni_1
+      name: lincolnTreptanie_1
       rect:
         serializedVersion: 2
-        x: 28
+        x: 21
         y: 0
-        width: 20
-        height: 16
+        width: 19
+        height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1a490004385065e40800000000000000
-      internalID: 5644705244228129953
+      spriteID: f07d7f774918d1150800000000000000
+      internalID: 5844970366064645903
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KingAni_2
+      name: lincolnTreptanie_2
       rect:
         serializedVersion: 2
-        x: 49
+        x: 41
         y: 0
-        width: 23
-        height: 16
+        width: 19
+        height: 19
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2c22f7244878a6b10800000000000000
-      internalID: 1975540388676444866
+      spriteID: 573cfc40638a3bf80800000000000000
+      internalID: -8091939155492224139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lincolnTreptanie_3
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 0
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b51b3473464977ad0800000000000000
+      internalID: -2704529893067869861
       vertices: []
       indices: 
       edges: []
@@ -188,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: bc1dcbbc667d5174897127b91c993683
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -198,9 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      KingAni_0: -8201917269680337280
-      KingAni_1: 5644705244228129953
-      KingAni_2: 1975540388676444866
+      lincolnTreptanie_0: 6389623511445238630
+      lincolnTreptanie_1: 5844970366064645903
+      lincolnTreptanie_2: -8091939155492224139
+      lincolnTreptanie_3: -2704529893067869861
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
