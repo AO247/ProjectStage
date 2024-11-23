@@ -25,9 +25,10 @@ public class WeaponPlayer : MonoBehaviour
     {
         if (delayTime <= 0 && !attackStop)
         {
-            animator.SetBool("Szpadel_Atak", true);
+            
             attackStop = true;
             baTime = beforeAttackTime;
+            animator.SetBool("Atakowanie", true);
         }
 
     }
@@ -51,9 +52,10 @@ public class WeaponPlayer : MonoBehaviour
         }
         else if (aaTime <= 0 && baTime == 0 && attackStop == true)
         {
+            animator.SetBool("Atakowanie", false);
+
             delayTime = delay;
             attackStop = false;
-            animator.SetBool("Szpadel_Atak", false);
 
         }
 

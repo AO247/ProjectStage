@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     float knockTime = 0f;
     float finishTime = 0f;
     Animator animator;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
