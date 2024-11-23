@@ -3,7 +3,7 @@ using TMPro;
 using System.Collections;
 using System;
 using Unity.VisualScripting;
-public class NewMonoBehaviourScript : MonoBehaviour
+public class DialogScript : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
     public string[] lines;
@@ -12,12 +12,15 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     [SerializeField] private AudioClip[] dialogueSoundClip;
 
+    [SerializeField] private int _enemySpawnNumber;
+
+    [SerializeField] public GameObject enemyPrefab;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         textComponent.text = string.Empty;
-        StartDialog();
     }
 
     // Update is called once per frame
@@ -36,11 +39,15 @@ public class NewMonoBehaviourScript : MonoBehaviour
             }
         }
     }
-    void StartDialog()
+    public void StartDialog()
     {
         index = 0;
         SoundFXMaster.instance.PlaySoundFXClip(dialogueSoundClip[index], transform, 1f);
         StartCoroutine(TypeLine());
+        for(int i = 0 ; i < _enemySpawnNumber; i++)
+        {
+            Instantiate(enemyPrefab, new Vector3(i*2, 0, i*2), Quaternion.identity);
+        }
     }
 
 
