@@ -144,7 +144,7 @@ public class Scena1 : MonoBehaviour
                         {
                             if(!lic.GetComponent<HealthEnemy>().IsDead())
                             {
-                                allDead = false;
+                                //allDead = false;
                                 break;
                             }
                         }
@@ -176,7 +176,7 @@ public class Scena1 : MonoBehaviour
                     {
                         if (!lic.GetComponent<HealthEnemy>().IsDead())
                         {
-                            allDead = false;
+                            //allDead = false;
                             break;
                         }
                     }

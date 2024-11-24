@@ -288,10 +288,10 @@ public class Scena0 : MonoBehaviour
                         }
                     }
 
-                    if (time > 30) // Sprawdzenie czasu
+                    if (time > 10) // Sprawdzenie czasu
                     {
                         time = 0f;
-                        Dialog6_done();
+                        Dialog7_done();
                     }
 
                     // Sprawdzenie, czy wszyscy Lincolnowie s¹ martwi

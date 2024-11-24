@@ -4934,7 +4934,7 @@ MonoBehaviour:
   delay: 0
   beforeAttackTime: 0.5
   afterAttackTime: 0.5
-  knockback: 1
+  knockback: 0
   enemy: {fileID: 8141976994295234909}
 --- !u!1 &8141976994295234909
 GameObject:

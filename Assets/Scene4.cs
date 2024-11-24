@@ -114,11 +114,11 @@ public class Scena4 : MonoBehaviour
             {
                 if (source.clip == dialog2)
                 {
-                    if (castleCount[0].GetComponent<HealthEnemy>().IsDead() && spawnedGuards.Count == 0)
+                    if (!castleCount[0].GetComponent<HealthEnemy>().IsStanding())
                     {
                         time += Time.deltaTime;
 
-                        if (time % 5 == 0) 
+                        if (time >3) 
                         {
                             var positions = new List<Vector3>
                         {
@@ -134,10 +134,11 @@ public class Scena4 : MonoBehaviour
                                 var newGuard = Instantiate(guard, pos, Quaternion.identity);
                                 spawnedGuards.Add(newGuard);
                             }
+                            time = 0;
                         }
                         
                     }
-                    else if (castleCount[1].GetComponent<HealthEnemy>().IsDead() && spawnedGuards.Count == 0)
+                    else if (!castleCount[1].GetComponent<HealthEnemy>().IsStanding())
                     {
                         
                         if (spawnedGuards.Count < 4)

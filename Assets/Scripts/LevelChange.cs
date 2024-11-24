@@ -16,7 +16,12 @@ public class LevelChange : MonoBehaviour
 
     private void Update()
     {
-        if(player.GetComponent<HealthPlayer>().IsDead())
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+        }
+        if (player.GetComponent<HealthPlayer>().IsDead())
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
