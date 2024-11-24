@@ -1,25 +1,16 @@
 fileFormatVersion: 2
-guid: aae0008872f57544a97c548bb43e89ba
+guid: 6c14f7942f792264f9f3baf42a8fbb32
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4456960042610803090
-    second: whip_0
+      213: -2126246720042785711
+    second: blood_0
   - first:
-      213: 6862504231833865357
-    second: whip_1
+      213: -174042169833062346
+    second: blood_1
   - first:
-      213: -5955932147524123104
-    second: whip_2
-  - first:
-      213: 1860768466498314387
-    second: whip_3
-  - first:
-      213: -6296535384464381439
-    second: whip_4
-  - first:
-      213: 6751796482697363955
-    second: whip_5
+      213: 8958670535985375444
+    second: blood_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: whip_0
+      name: blood_0
       rect:
         serializedVersion: 2
-        x: 2
+        x: 4
         y: 0
-        width: 49
-        height: 40
+        width: 32
+        height: 20
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +134,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e6eb21a8472b522c0800000000000000
-      internalID: -4456960042610803090
+      spriteID: 154a20b9fdd0e72e0800000000000000
+      internalID: -2126246720042785711
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: whip_1
+      name: blood_1
       rect:
         serializedVersion: 2
-        x: 53
+        x: 44
         y: 0
-        width: 49
-        height: 40
+        width: 33
+        height: 20
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,20 +156,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d8c82106d338c3f50800000000000000
-      internalID: 6862504231833865357
+      spriteID: 6308923919da59df0800000000000000
+      internalID: -174042169833062346
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: whip_2
+      name: blood_2
       rect:
         serializedVersion: 2
-        x: 102
+        x: 84
         y: 0
-        width: 49
-        height: 40
+        width: 33
+        height: 20
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,74 +178,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 026ce788447485da0800000000000000
-      internalID: -5955932147524123104
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: whip_3
-      rect:
-        serializedVersion: 2
-        x: 150
-        y: 0
-        width: 49
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 39061eebf07c2d910800000000000000
-      internalID: 1860768466498314387
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: whip_4
-      rect:
-        serializedVersion: 2
-        x: 200
-        y: 0
-        width: 49
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 10aa255ad663e98a0800000000000000
-      internalID: -6296535384464381439
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: whip_5
-      rect:
-        serializedVersion: 2
-        x: 251
-        y: 0
-        width: 49
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3f188e2e02333bd50800000000000000
-      internalID: 6751796482697363955
+      spriteID: 4d8aa2d2367935c70800000000000000
+      internalID: 8958670535985375444
       vertices: []
       indices: 
       edges: []
@@ -263,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 20435ece63d0c0c408fad08099c4fdf8
+    spriteID: cad574a095221c4449ad2a434a3ee524
     internalID: 0
     vertices: []
     indices: 
@@ -273,12 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      whip_0: -4456960042610803090
-      whip_1: 6862504231833865357
-      whip_2: -5955932147524123104
-      whip_3: 1860768466498314387
-      whip_4: -6296535384464381439
-      whip_5: 6751796482697363955
+      blood_0: -2126246720042785711
+      blood_1: -174042169833062346
+      blood_2: 8958670535985375444
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -7,7 +7,7 @@ public class HealthEnemy : MonoBehaviour
 {
     [SerializeField] float currentHealth;
     [SerializeField] float standingTime;
-    [SerializeField] Renderer pool;
+    [SerializeField] SpriteRenderer pool;
     [SerializeField] ParticleSystem blood;
     [SerializeField] ParticleSystem hit;
 
@@ -84,9 +84,11 @@ public class HealthEnemy : MonoBehaviour
     {
         isDead = true;
         pool.enabled = true;
+        pool.GetComponent<Animator>().Play("BloodAnimation");
         currentHealth = 0;
         isStanding = false;
         animator.SetBool("IsStanding", false);
+
         blood.Play();
     }
 

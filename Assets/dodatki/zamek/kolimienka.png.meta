@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 718e9fcbc4c3911498b604e0b1356b1a
+guid: 44e507a3419105243ae605b137a17ddf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1784205716024546507
-    second: curtain_0
+      213: -5532018254135491970
+    second: kolimienka_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: curtain_0
+      name: kolimienka_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1440
-        height: 25
+        width: 14
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 53ba22aba5a3d37e0800000000000000
-      internalID: -1784205716024546507
+      spriteID: e72074f25b25a33b0800000000000000
+      internalID: -5532018254135491970
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      curtain_0: -1784205716024546507
+      kolimienka_0: -5532018254135491970
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

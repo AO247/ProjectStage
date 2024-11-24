@@ -18,7 +18,9 @@ public class Player : MonoBehaviour
     float knockTime = 0f;
     float finishTime = 0f;
     Animator animator;
-    
+
+    LevelChange levelChange;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -46,6 +48,7 @@ public class Player : MonoBehaviour
         {
             weapon = weapon4;
         }
+
     }
     // Update is called once per frame
     void Update()

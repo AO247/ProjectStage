@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c00a281fd600e4d468023e0f332476f9
+guid: 016646ec17c40e045981b54c0a07b619
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -14,6 +14,18 @@ TextureImporter:
   - first:
       213: -340812646606412643
     second: saber_3
+  - first:
+      213: 6221555932970108882
+    second: saber_4
+  - first:
+      213: -2801395446222274245
+    second: saber_5
+  - first:
+      213: 4164508412642560856
+    second: saber_6
+  - first:
+      213: 7453158365044650257
+    second: saber_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -125,12 +137,12 @@ TextureImporter:
       name: saber_0
       rect:
         serializedVersion: 2
-        x: 10
+        x: 7
         y: 0
-        width: 19
+        width: 31
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -147,12 +159,12 @@ TextureImporter:
       name: saber_1
       rect:
         serializedVersion: 2
-        x: 50
+        x: 47
         y: 0
-        width: 22
-        height: 18
+        width: 31
+        height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -169,12 +181,12 @@ TextureImporter:
       name: saber_2
       rect:
         serializedVersion: 2
-        x: 90
+        x: 89
         y: 0
-        width: 24
-        height: 19
+        width: 31
+        height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -193,10 +205,10 @@ TextureImporter:
         serializedVersion: 2
         x: 130
         y: 0
-        width: 21
-        height: 18
+        width: 31
+        height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -209,11 +221,99 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: saber_4
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 0
+        width: 31
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d748e66828675650800000000000000
+      internalID: 6221555932970108882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: saber_5
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 0
+        width: 31
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3146802fa17f19d0800000000000000
+      internalID: -2801395446222274245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: saber_6
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 0
+        width: 31
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85b8fa7365e4bc930800000000000000
+      internalID: 4164508412642560856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: saber_7
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 0
+        width: 30
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 111b7336b00fe6760800000000000000
+      internalID: 7453158365044650257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e6ff281966b9a0c41bf381d806e130d1
     internalID: 0
     vertices: []
     indices: 
@@ -227,6 +327,10 @@ TextureImporter:
       saber_1: 6150905265944473243
       saber_2: -863339844276667794
       saber_3: -340812646606412643
+      saber_4: 6221555932970108882
+      saber_5: -2801395446222274245
+      saber_6: 4164508412642560856
+      saber_7: 7453158365044650257
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
