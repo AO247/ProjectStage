@@ -45,6 +45,14 @@ public class WeaponPlayer : MonoBehaviour
         {
             baTime -= Time.deltaTime;
         }
+        else if (baTime < 0.14 && baTime > 0.12 && weaponType == 1)
+        {
+            for (int i = 0; i < _enemies.Count; i++)
+            {
+                _enemies[i].GetComponent<HealthEnemy>().GetHit(damage, 0);
+            }
+            isAttacking = false;
+        }
         else if (baTime < 0 && attackStop == true)
         {
             isAttacking = true;

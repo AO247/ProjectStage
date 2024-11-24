@@ -49,7 +49,7 @@ MonoBehaviour:
   delay: 0
   beforeAttackTime: 0.2
   afterAttackTime: 1.15
-  knockback: 5
+  knockback: 0
   weaponType: 0
 --- !u!60 &6013254620173892069
 PolygonCollider2D:
@@ -148,11 +148,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdefc724c64d8e8428c38758dc19182c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 2
   delay: 0
-  beforeAttackTime: 0.04
-  afterAttackTime: 0.2
-  knockback: 2
+  beforeAttackTime: 0.29
+  afterAttackTime: 1
+  knockback: 0
   weaponType: 1
 --- !u!60 &6922229188561893497
 PolygonCollider2D:
@@ -200,18 +200,18 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.6847804, y: -0.06405866}
-      - {x: 0.57632864, y: 0.09961045}
-      - {x: 0.5128869, y: 0.21761787}
-      - {x: 0.31272066, y: 0.34355438}
-      - {x: 0.1551727, y: 0.31782293}
-      - {x: 0.07740891, y: 0.2906443}
-      - {x: -0.035149813, y: 0.20632112}
-      - {x: -0.06763291, y: -0.07604897}
-      - {x: -0.041819036, y: -0.3274494}
-      - {x: -0.03669685, y: -0.5260579}
-      - {x: 0.6969335, y: -0.54528725}
-      - {x: 0.693556, y: -0.36623007}
+    - - {x: 0.8560517, y: 0.08580375}
+      - {x: 0.60130566, y: 0.28515434}
+      - {x: 0.46293283, y: 0.34963965}
+      - {x: 0.2021079, y: 0.3756677}
+      - {x: -0.11243868, y: 0.37491333}
+      - {x: -0.07245338, y: 0.28707623}
+      - {x: -0.08510387, y: 0.1849122}
+      - {x: -0.096178174, y: -0.1545484}
+      - {x: -0.109613955, y: -0.37740353}
+      - {x: -0.11876434, y: -0.5189216}
+      - {x: 0.94313616, y: -0.49890125}
+      - {x: 0.95403117, y: -0.22707206}
   m_UseDelaunayMesh: 0
 --- !u!1 &6092172734994929868
 GameObject:
@@ -408,7 +408,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.1875, y: 1.25}
+  m_Size: {x: 1.9375, y: 1.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -499,8 +499,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.1875, y: 1.25}
-    newSize: {x: 1.1875, y: 1.25}
+    oldSize: {x: 1.9375, y: 1.25}
+    newSize: {x: 1.9375, y: 1.25}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -588,8 +588,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.1875, y: 1.25}
-    newSize: {x: 1.1875, y: 1.25}
+    oldSize: {x: 1.9375, y: 1.25}
+    newSize: {x: 1.9375, y: 1.25}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -796,16 +796,17 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 2.4406018, y: 1.384846}
-      - {x: 1.8348635, y: 2.0364003}
-      - {x: -0.17740655, y: 2.2283}
-      - {x: -1.6433586, y: 1.9125377}
-      - {x: -2.402114, y: 0.7945777}
-      - {x: -2.4126618, y: -0.9463172}
-      - {x: -1.1651361, y: -1.9600954}
-      - {x: 0.5082182, y: -2.2607374}
-      - {x: 1.5895199, y: -2.2167907}
-      - {x: 2.2180429, y: -1.4869412}
-      - {x: 2.5716605, y: -0.4955436}
-      - {x: 2.7806396, y: 0.4538095}
+    - - {x: 1.401749, y: 1.0722967}
+      - {x: 1.2278049, y: 1.3532078}
+      - {x: 0.16858625, y: 1.5934658}
+      - {x: -0.88399243, y: 1.490076}
+      - {x: -1.5695361, y: 0.8895699}
+      - {x: -1.5373371, y: -0.46040332}
+      - {x: -0.8834832, y: -1.2626989}
+      - {x: 0.41677284, y: -1.3906083}
+      - {x: 1.2148042, y: -1.142855}
+      - {x: 1.5156974, y: -0.68761206}
+      - {x: 1.5536412, y: -0.21086812}
+      - {x: 1.590877, y: 0.34814113}
+      - {x: 1.5151125, y: 0.8545598}
   m_UseDelaunayMesh: 0

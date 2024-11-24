@@ -55,6 +55,9 @@ public class Enemy : MonoBehaviour
         {
             if (health.GetHP() > 0)
             {
+
+                rend.material.color = Color.white;
+
                 //print(weapon.IsAttacking());
                 coli.enabled = true;
                 polygonColi.enabled = false;
@@ -114,8 +117,11 @@ public class Enemy : MonoBehaviour
                         if(player.GetComponent<Player>().GetFinishTime() <= 0)
                         {
                             player.GetComponent<Player>().Finisher();
-                            health.Dead();
-                            rend.material.color = Color.white;
+                            if (player.GetComponent<Player>().GetFinishTime() > 1)
+                            {
+                                health.Dead();
+                                rend.material.color = Color.white;
+                            }
                         }
                         
                     }

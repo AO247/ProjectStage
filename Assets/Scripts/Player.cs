@@ -64,7 +64,7 @@ public class Player : MonoBehaviour
 
                 }
             }
-            if (knockTime > 0f)
+            else if (knockTime > 0f)
             {
                 if (knockTime > 0.9f)
                 {
