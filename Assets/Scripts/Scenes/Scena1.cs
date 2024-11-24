@@ -23,18 +23,23 @@ public class Scena1 : MonoBehaviour
     [SerializeField] TextMeshPro text3;
     [SerializeField] TextMeshPro text4;
     [SerializeField] TextMeshPro text5;
-
+    LevelChange levelChange;
     AudioSource source;
     GameObject lincoln1, lincoln2;
     private List<GameObject> spawnedLincolns = new List<GameObject>(); // Lista do przechowywania referencji do stworzonych Lincolnów
 
     float time = 0f;
+    float hp;
     bool _done1 = false, _done2 = false, _done3 = false, _done4 = false, _done5 = false, _done6 = false, _done7 = false, _done8 = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        hp = player.GetComponent<HealthPlayer>().GetHP();
+        levelChange = GetComponent<LevelChange>();
+
         source = GetComponent<AudioSource>();
         Dialog1();
+
     }
 
     private void Dialog1()
@@ -92,7 +97,9 @@ public class Scena1 : MonoBehaviour
     {
         _done5 = true;
         textShow.text = "";
+        levelChange.ChangeLevel();
     }
+
     void Update()
     {
         if (!_done1)
@@ -101,46 +108,57 @@ public class Scena1 : MonoBehaviour
             {
                 StartCoroutine(TypeText(text1.text, textShow, 0.05f));
             }
+            if (spawnedLincolns.Count < 3) // Zmieñ liczbê na 5
+            {
+                // Dodawanie Lincolnów
+                var positions = new List<Vector3>
+                {
 
+                    new Vector3(-6f, 0f, 0f),
+                    new Vector3(6f, 0f, 0f),
+                    new Vector3(3f, 0f, 0f),
+
+                };
+
+                foreach (var pos in positions)
+                {
+                    var newLincoln = Instantiate(lincoln, pos, Quaternion.identity);
+                    spawnedLincolns.Add(newLincoln);
+                }
+            }
             if (!source.isPlaying)
             {
+
                 if (source.clip == dialog1)
                 {
                     if (player.GetComponent<Player>().GetVelocity() != Vector2.zero)
                     {
-                        Dialog1_done();
+                        if (hp > player.GetComponent<HealthPlayer>().GetHP())
+                        {
+                            _done1 = true;
+                            Dialog2_done();
+                        }
+                        bool allDead = true;
+                        foreach (var lic in spawnedLincolns)
+                        {
+                            if(!lic.GetComponent<HealthEnemy>().IsDead())
+                            {
+                                allDead = false;
+                                break;
+                            }
+                        }
+                        if(allDead)
+                        {
+                            _done2 = true;
+                            Dialog3_done();
+                        }
+
                     }
 
                 }
             }
         }
-        else if (!_done2 && _done1)
-        {
-            if (source.isPlaying && source.clip == dialog2 && textShow.text == "")
-            {
-                StartCoroutine(TypeText(text2.text, textShow, 0.05f));
-            }
-
-            if (!source.isPlaying)
-            {
-                if (source.clip == dialog2)
-                {
-                    if (spawnedLincolns.Count == 0)
-                    {
-                        var lincoln1 = Instantiate(lincoln, lincoln.transform.position + new Vector3(1f, 0f, 0f), Quaternion.identity);
-                        spawnedLincolns.Add(lincoln1);
-                    }
-                    if (!spawnedLincolns[0].GetComponent<HealthEnemy>().IsStanding())
-                    {
-                        spawnedLincolns[0].GetComponent<HealthEnemy>().SetMaxHealth(0f);
-                        Dialog2_done();
-                    }
-
-
-
-                }
-            }
-        }
+       
         else if (!_done3 && _done2)
         {
             if (source.isPlaying && source.clip == dialog3 && textShow.text == "")
@@ -152,17 +170,19 @@ public class Scena1 : MonoBehaviour
             {
                 if (source.clip == dialog3)
                 {
-                    time += Time.deltaTime;
-                    if (time > 7)
+                    bool allDead = true;
+                    foreach (var lic in spawnedLincolns)
                     {
-                        time = 0f;
-                        Dialog3_done();
+                        if (!lic.GetComponent<HealthEnemy>().IsDead())
+                        {
+                            allDead = false;
+                            break;
+                        }
                     }
-                    if (spawnedLincolns[0].GetComponent<HealthEnemy>().IsDead())
+                    if (allDead)
                     {
-                        _done3 = true;
-                        _done4 = true;
-                        Dialog5_done();
+                        _done2 = true;
+                        Dialog3_done();
                     }
 
 
@@ -180,21 +200,43 @@ public class Scena1 : MonoBehaviour
             {
                 if (source.clip == dialog4)
                 {
-                    time += Time.deltaTime;
-                    if (time > 7)
+                    if (spawnedLincolns.Count < 8) // Zmieñ liczbê na 5
                     {
-                        time = 0f;
+                        // Dodawanie Lincolnów
+                        var positions = new List<Vector3>
+                {
 
+                    new Vector3(-6f, 0f, 0f),
+                    new Vector3(6f, 0f, 0f),
+                    new Vector3(3f, 0f, 0f),
+                    new Vector3(-6f, 0f, 0f),
+                };
+
+                        foreach (var pos in positions)
+                        {
+                            var newLincoln = Instantiate(lincoln, pos, Quaternion.identity);
+                            spawnedLincolns.Add(newLincoln);
+                        }
+                    }
+
+
+                    bool allDead = true;
+                    foreach (var lic in spawnedLincolns)
+                    {
+                        if (!lic.GetComponent<HealthEnemy>().IsDead())
+                        {
+                            allDead = false;
+                            break;
+                        }
+                    }
+                    if (allDead)
+                    {
+                        _done2 = true;
                         Dialog4_done();
                     }
-                    if (spawnedLincolns[0].GetComponent<HealthEnemy>().IsDead())
-                    {
-                        _done4 = true;
-                        Dialog5_done();
-                    }
-
 
                 }
+
             }
         }
         else if (!_done5 && _done4)

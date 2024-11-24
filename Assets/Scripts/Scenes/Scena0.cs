@@ -35,12 +35,14 @@ public class Scena0 : MonoBehaviour
     AudioSource source;
     GameObject lincoln1, lincoln2;
     private List<GameObject> spawnedLincolns = new List<GameObject>(); // Lista do przechowywania referencji do stworzonych Lincolnów
-
+    LevelChange levelChange;
     float time = 0f;
     bool _done1 = false, _done2 =false, _done3 = false, _done4 = false, _done5 = false, _done6 = false, _done7 = false, _done8 = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        levelChange = GetComponent<LevelChange>();
+
         source = GetComponent<AudioSource>();
         Dialog1();
     }
@@ -133,6 +135,7 @@ public class Scena0 : MonoBehaviour
     {
         _done8 = true;
         textShow.text = "";
+        levelChange.ChangeLevel();
 
     }
     void Update()
@@ -349,7 +352,7 @@ public class Scena0 : MonoBehaviour
                 if (source.clip == dialog8)
                 {
                     player.GetComponent<HealthPlayer>().addHp();
-                    player.GetComponent<HealthPlayer>().GetHit(1,1,null);
+                    //player.GetComponent<HealthPlayer>().GetHit(1,1,null);
                     Dialog8_done();
                 }
             }

@@ -8,10 +8,10 @@ public class LevelChange : MonoBehaviour
 
     public async void ChangeLevel()
     {
-        animator.Play("kurtyna_zaslon");
-        Debug.Log("Zas³anianie kurtyny");
-        // Poczekaj, a¿ animacja siê skoñczy
-        await WaitForAnimation(animator, "kurtyna_zaslon");
+        //animator.Play("kurtyna_zaslon");
+        //Debug.Log("Zas³anianie kurtyny");
+        //// Poczekaj, a¿ animacja siê skoñczy
+        //await WaitForAnimation(animator, "kurtyna_zaslon");
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
