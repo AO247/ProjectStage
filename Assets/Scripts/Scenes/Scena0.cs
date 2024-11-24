@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Scena1 : MonoBehaviour
+public class Scena0 : MonoBehaviour
 {
     [SerializeField] GameObject lincoln;
     [SerializeField] GameObject king;
@@ -16,6 +16,10 @@ public class Scena1 : MonoBehaviour
     [SerializeField] AudioClip dialog3;
     [SerializeField] AudioClip dialog4;
     [SerializeField] AudioClip dialog5;
+    [SerializeField] AudioClip dialog6;
+    [SerializeField] AudioClip dialog7;
+    [SerializeField] AudioClip dialog8;
+    [SerializeField] AudioClip dialog9;
 
     [SerializeField] TextMeshPro textShow;
     [SerializeField] TextMeshPro text1;
@@ -23,13 +27,17 @@ public class Scena1 : MonoBehaviour
     [SerializeField] TextMeshPro text3;
     [SerializeField] TextMeshPro text4;
     [SerializeField] TextMeshPro text5;
+    [SerializeField] TextMeshPro text6;
+    [SerializeField] TextMeshPro text7;
+    [SerializeField] TextMeshPro text8;
+    [SerializeField] TextMeshPro text9;
 
     AudioSource source;
     GameObject lincoln1, lincoln2;
     private List<GameObject> spawnedLincolns = new List<GameObject>(); // Lista do przechowywania referencji do stworzonych Lincolnów
 
     float time = 0f;
-    bool _done1 = false, _done2 = false, _done3 = false, _done4 = false, _done5 = false, _done6 = false, _done7 = false, _done8 = false;
+    bool _done1 = false, _done2 =false, _done3 = false, _done4 = false, _done5 = false, _done6 = false, _done7 = false, _done8 = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -92,10 +100,43 @@ public class Scena1 : MonoBehaviour
     {
         _done5 = true;
         textShow.text = "";
+        Dialog6();
+    }
+    private void Dialog6()
+    {
+        source.clip = dialog6;
+        source.Play();
+    }
+    private void Dialog6_done()
+    {
+        _done6 = true;
+        textShow.text = "";
+        Dialog7();
+    }
+    private void Dialog7()
+    {
+        source.clip = dialog7;
+        source.Play();
+    }
+    private void Dialog7_done()
+    {
+        _done7 = true;
+        textShow.text = "";
+        Dialog8();
+    }
+    private void Dialog8()
+    {
+        source.clip = dialog8;
+        source.Play();
+    }
+    private void Dialog8_done()
+    {
+        _done8 = true;
+        textShow.text = "";
+
     }
     void Update()
-    {
-        if (!_done1)
+    {   if (!_done1)
         {
             if (source.isPlaying && source.clip == dialog1 && textShow.text == "")
             {
@@ -106,11 +147,11 @@ public class Scena1 : MonoBehaviour
             {
                 if (source.clip == dialog1)
                 {
-                    if (player.GetComponent<Player>().GetVelocity() != Vector2.zero)
+                    if(player.GetComponent<Player>().GetVelocity() != Vector2.zero)
                     {
                         Dialog1_done();
                     }
-
+                    
                 }
             }
         }
@@ -136,7 +177,7 @@ public class Scena1 : MonoBehaviour
                         Dialog2_done();
                     }
 
-
+                    
 
                 }
             }
@@ -210,9 +251,124 @@ public class Scena1 : MonoBehaviour
                 _done4 = true;
                 Dialog5_done();
             }
+ 
+        }
+        else if (!_done6 && _done5)
+        {
+            if (source.isPlaying && source.clip == dialog6 && textShow.text == "")
+            {
+                StartCoroutine(TypeText(text6.text, textShow, 0.05f));
+            }
+            if (!source.isPlaying)
+            {
+                if (source.clip == dialog6)
+                {
+                    time += Time.deltaTime; // Dodanie czasu w sposób ci¹g³y
 
+                    if (spawnedLincolns.Count < 5) // Zmieñ liczbê na 5
+                    {
+                        // Dodawanie Lincolnów
+                        var positions = new List<Vector3>
+                {
+                    new Vector3(0f, 0f, 0f),
+                    new Vector3(-6f, 0f, 0f),
+                    new Vector3(6f, 0f, 0f),
+                    new Vector3(3f, 0f, 0f),
+                    new Vector3(-3f, 0f, 0f)
+                };
+
+                        foreach (var pos in positions)
+                        {
+                            var newLincoln = Instantiate(lincoln, pos, Quaternion.identity);
+                            spawnedLincolns.Add(newLincoln);
+                        }
+                    }
+
+                    if (time > 30) // Sprawdzenie czasu
+                    {
+                        time = 0f;
+                        Dialog6_done();
+                    }
+
+                    // Sprawdzenie, czy wszyscy Lincolnowie s¹ martwi
+                    bool allDead = true;
+                    foreach (var lincoln in spawnedLincolns)
+                    {
+                        if (!lincoln.GetComponent<HealthEnemy>().IsDead())
+                        {
+                            allDead = false;
+                            break;
+                        }
+                    }
+
+                    if (allDead)
+                    {
+                        _done6 = true;
+                        Dialog7_done();
+                    }
+                }
+            }
         }
 
+        else if (!_done7 && _done6)
+        {
+            if (source.isPlaying && source.clip == dialog7 && textShow.text == "")
+            {
+                StartCoroutine(TypeText(text7.text, textShow, 0.05f));
+                time = 0f;
+            }
+            if (!source.isPlaying)
+            {
+                if (source.clip == dialog7)
+                {
+                    if (spawnedLincolns.Count < 3)
+                    { 
+                        
+                    }
+                    time = Time.deltaTime;
+
+                    if (time > 30)
+                    {
+                        time = 0f;
+                        Dialog6_done();
+                    }
+
+
+                }
+            }
+        }
+        else if (!_done8 && _done7)
+        {
+            if (source.isPlaying && source.clip == dialog8 && textShow.text == "")
+            {
+                StartCoroutine(TypeText(text8.text, textShow, 0.05f));
+
+            }
+            if (!source.isPlaying)
+            {
+                if (source.clip == dialog8)
+                {
+                    player.GetComponent<HealthPlayer>().addHp();
+                    player.GetComponent<HealthPlayer>().GetHit(1,1,null);
+                    Dialog8_done();
+                }
+            }
+        }
+        else if (_done8)
+        {
+            if (source.isPlaying && source.clip == dialog9 && textShow.text == "")
+            {
+                StartCoroutine(TypeText(text9.text, textShow, 0.05f));
+
+            }
+            if (!source.isPlaying)
+            {
+                if (source.clip == dialog9)
+                {
+                   
+                }
+            }
+        }
 
     }
     private IEnumerator TypeText(string fullText, TextMeshPro targetText, float delay)

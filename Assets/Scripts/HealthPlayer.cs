@@ -55,5 +55,9 @@ public class HealthPlayer : MonoBehaviour
     {
         return isDead;
     }
-    
+    public void addHp()
+    {
+        currentHealth++;
+    }
+
 }

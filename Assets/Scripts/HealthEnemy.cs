@@ -30,7 +30,11 @@ public class HealthEnemy : MonoBehaviour
     }
     private void Update()
     {
-        if (currentHealth == 0 && !isDead)
+        if(maxHealth == 0f)
+        {
+            GetComponent<Renderer>().material.color = Color.white;
+        }
+        else if (currentHealth == 0 && !isDead)
         {
             if (sTime > 0f)
             {
@@ -104,5 +108,10 @@ public class HealthEnemy : MonoBehaviour
     {
         return isStanding;
     }
+    public void SetMaxHealth(float amount)
+    {
+        maxHealth = amount;
+    }
+
 
 }
