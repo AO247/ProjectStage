@@ -11,6 +11,7 @@ public class Scena1 : MonoBehaviour
     [SerializeField] GameObject king;
     [SerializeField] GameObject princess;
     [SerializeField] GameObject player;
+    [SerializeField] GameObject wiesniok;
     [SerializeField] AudioClip dialog1;
     [SerializeField] AudioClip dialog2;
     [SerializeField] AudioClip dialog3;
@@ -122,7 +123,7 @@ public class Scena1 : MonoBehaviour
 
                 foreach (var pos in positions)
                 {
-                    var newLincoln = Instantiate(lincoln, pos, Quaternion.identity);
+                    var newLincoln = Instantiate(wiesniok, pos, Quaternion.identity);
                     spawnedLincolns.Add(newLincoln);
                 }
             }
@@ -204,13 +205,13 @@ public class Scena1 : MonoBehaviour
                     {
                         // Dodawanie Lincolnów
                         var positions = new List<Vector3>
-                {
+                        {
 
-                    new Vector3(-6f, 0f, 0f),
-                    new Vector3(6f, 0f, 0f),
-                    new Vector3(3f, 0f, 0f),
-                    new Vector3(-6f, 0f, 0f),
-                };
+                            new Vector3(-6f, 0f, 0f),
+                            new Vector3(6f, 0f, 0f),
+                            new Vector3(3f, 0f, 0f),
+                            new Vector3(-6f, 0f, 0f),
+                        };
 
                         foreach (var pos in positions)
                         {

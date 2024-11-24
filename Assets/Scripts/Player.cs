@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     float finishTime = 0f;
     Animator animator;
 
+    private bool reverseControls = false;
     LevelChange levelChange;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -91,6 +92,14 @@ public class Player : MonoBehaviour
                 // Pobierz osie ruchu
                 float inputX = Input.GetAxisRaw("Horizontal");
                 float inputY = Input.GetAxisRaw("Vertical");
+
+                if (reverseControls)
+                {
+                    inputX = -inputX;
+                    inputY = -inputY;
+                }
+
+
                 if (Input.GetButtonDown("Fire1"))
                 {
                     weapon.Attack();
@@ -100,7 +109,7 @@ public class Player : MonoBehaviour
                     if(weapon.GetWeaponType() != 0)
                     {
                         animator.Play(weapon.GetWeaponType().ToString() + "_MOVE");
-                        print(weapon.GetWeaponType().ToString() + "_MOVE");
+                        //print(weapon.GetWeaponType().ToString() + "_MOVE");
                     }
                     
 
@@ -162,5 +171,18 @@ public class Player : MonoBehaviour
         return rb.linearVelocity;
     }
 
+
+    public void SetReverseControls(bool value)
+    {
+        reverseControls = value;
+    }
+    public bool GetSetReverseControls()
+    {
+        return reverseControls;
+    }
+    public void ChangeAxis()
+    {
+        rb.linearVelocity *= new Vector2(-1f, -1f);
+    }
 }
     
