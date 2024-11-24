@@ -1,32 +1,29 @@
-using NUnit.Framework;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Audiency : MonoBehaviour
 {
-    [SerializeField] HealthPlayer player;
-    float currentHealth;
-    [SerializeField] List<SpriteRenderer> audience = new List<SpriteRenderer>();
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private HealthPlayer player;
+    private float currentHealth;
+    private float previousHealth = -1;
+    [SerializeField] private List<SpriteRenderer> audience = new List<SpriteRenderer>();
 
-    // Update is called once per frame
     void Update()
     {
-        currentHealth =  player.GetHP();
-        for(int i = 0; i < currentHealth - 1; i++)
+        if (player == null)
         {
-            audience[i].enabled = true;
-        }
-        for(int i = (int)currentHealth;  i < audience.Count-1; i++)
-        {
-            audience[i].enabled = false;
-
+            Debug.LogError("Player is not assigned in the inspector.");
+            return;
         }
 
+        currentHealth = Mathf.Clamp(player.GetHP(), 0, audience.Count);
 
+        if (Mathf.Approximately(currentHealth, previousHealth)) return;
+        previousHealth = currentHealth;
+
+        for (int i = 0; i < audience.Count; i++)
+        {
+            audience[i].enabled = i < currentHealth;
+        }
     }
 }

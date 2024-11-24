@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: b91cf36c50778a94d8cfc830f972a109
+guid: 76180b5338512ed49bf65b346a8870e8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1226750255929566263
-    second: spade walk_0
+      213: -3600103509579511688
+    second: zweihander walking_0
   - first:
-      213: -6410355453254119163
-    second: spade walk_1
+      213: 779486885495203837
+    second: zweihander walking_1
   - first:
-      213: -2266756011295063730
-    second: spade walk_2
+      213: 8101860819374960634
+    second: zweihander walking_2
   - first:
-      213: 1774692762423069295
-    second: spade walk_3
+      213: -6292229696938529586
+    second: zweihander walking_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,89 +122,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spade walk_0
+      name: zweihander walking_0
       rect:
         serializedVersion: 2
-        x: 10
+        x: 6
         y: 0
-        width: 22
+        width: 23
         height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7342dc0bbda460110800000000000000
-      internalID: 1226750255929566263
+      spriteID: 87840e4aeecd90ec0800000000000000
+      internalID: -3600103509579511688
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spade walk_1
+      name: zweihander walking_1
       rect:
         serializedVersion: 2
-        x: 50
+        x: 46
         y: 0
-        width: 22
+        width: 23
         height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 501dcc4cda7d907a0800000000000000
-      internalID: -6410355453254119163
+      spriteID: df76405413b41da00800000000000000
+      internalID: 779486885495203837
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spade walk_2
+      name: zweihander walking_2
       rect:
         serializedVersion: 2
-        x: 90
+        x: 86
         y: 0
-        width: 22
+        width: 24
         height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e41c642ea6dda80e0800000000000000
-      internalID: -2266756011295063730
+      spriteID: affef7e5d779f6070800000000000000
+      internalID: 8101860819374960634
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spade walk_3
+      name: zweihander walking_3
       rect:
         serializedVersion: 2
-        x: 130
+        x: 126
         y: 0
-        width: 22
+        width: 23
         height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f6a0fa92aa9f0a810800000000000000
-      internalID: 1774692762423069295
+      spriteID: ecca0d4ad628da8a0800000000000000
+      internalID: -6292229696938529586
       vertices: []
       indices: 
       edges: []
@@ -213,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 026d424020084a74986e5c7eab1bc0ff
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -223,10 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      spade walk_0: 1226750255929566263
-      spade walk_1: -6410355453254119163
-      spade walk_2: -2266756011295063730
-      spade walk_3: 1774692762423069295
+      zweihander walking_0: -3600103509579511688
+      zweihander walking_1: 779486885495203837
+      zweihander walking_2: 8101860819374960634
+      zweihander walking_3: -6292229696938529586
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

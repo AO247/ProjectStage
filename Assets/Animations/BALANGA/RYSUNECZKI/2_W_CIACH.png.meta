@@ -1,37 +1,25 @@
 fileFormatVersion: 2
-guid: 4fd9d2872b1cca442afbd5334ee739d8
+guid: f79021dc3a9b2734e81d1a260519e4d5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3604457061158422176
-    second: spade_0
+      213: 9013794135250100151
+    second: zweihander_0
   - first:
-      213: 3005807590924418953
-    second: spade_1
+      213: -2498382004390371334
+    second: zweihander_1
   - first:
-      213: -5836420081628057067
-    second: spade_2
+      213: -8051683369309597290
+    second: zweihander_2
   - first:
-      213: -2243495726703175341
-    second: spade_3
+      213: 563630199076036897
+    second: zweihander_3
   - first:
-      213: 8922649838263582087
-    second: spade_4
+      213: 7175224416859292577
+    second: zweihander_4
   - first:
-      213: -4863602469753380881
-    second: spade_5
-  - first:
-      213: 5114976238101812197
-    second: spade_6
-  - first:
-      213: 5647239627680844490
-    second: spade_7
-  - first:
-      213: -4193761403142013165
-    second: spade_8
-  - first:
-      213: 1069602806228107836
-    second: spade_9
+      213: -7887623746422243704
+    second: zweihander_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -140,10 +128,10 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spade_0
+      name: zweihander_0
       rect:
         serializedVersion: 2
-        x: 10
+        x: 6
         y: 0
         width: 31
         height: 20
@@ -155,14 +143,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 069f08d66656afdc0800000000000000
-      internalID: -3604457061158422176
+      spriteID: 7bfd416420e671d70800000000000000
+      internalID: 9013794135250100151
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spade_1
+      name: zweihander_1
       rect:
         serializedVersion: 2
         x: 50
@@ -177,14 +165,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 98ff8381416c6b920800000000000000
-      internalID: 3005807590924418953
+      spriteID: aff5513ddc6f35dd0800000000000000
+      internalID: -2498382004390371334
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spade_2
+      name: zweihander_2
       rect:
         serializedVersion: 2
         x: 90
@@ -199,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5127a92cbded00fa0800000000000000
-      internalID: -5836420081628057067
+      spriteID: 6919160a2aca24090800000000000000
+      internalID: -8051683369309597290
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spade_4
+      name: zweihander_3
       rect:
         serializedVersion: 2
         x: 130
@@ -221,14 +209,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 78db5e0f0ce93db70800000000000000
-      internalID: 8922649838263582087
+      spriteID: 1212c980eaa62d700800000000000000
+      internalID: 563630199076036897
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spade_5
+      name: zweihander_4
       rect:
         serializedVersion: 2
         x: 170
@@ -243,61 +231,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fef13ad7253018cb0800000000000000
-      internalID: -4863602469753380881
+      spriteID: 1a38b965794839360800000000000000
+      internalID: 7175224416859292577
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spade_7
+      name: zweihander_5
       rect:
         serializedVersion: 2
         x: 210
-        y: 0
-        width: 31
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: aca0d6165860f5e40800000000000000
-      internalID: 5647239627680844490
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spade_8
-      rect:
-        serializedVersion: 2
-        x: 250
-        y: 0
-        width: 31
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 31ff9fc2934ccc5c0800000000000000
-      internalID: -4193761403142013165
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spade_9
-      rect:
-        serializedVersion: 2
-        x: 290
         y: 0
         width: 30
         height: 20
@@ -309,8 +253,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c32ccf3d51ef7de00800000000000000
-      internalID: 1069602806228107836
+      spriteID: 88ef0983ef7898290800000000000000
+      internalID: -7887623746422243704
       vertices: []
       indices: 
       edges: []
@@ -319,7 +263,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9bc321199f0c8ca41acdfa4dbb3401a1
+    spriteID: 230d9e487c29e7941836224bae7fa3e2
     internalID: 0
     vertices: []
     indices: 
@@ -329,16 +273,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      spade_0: -3604457061158422176
-      spade_1: 3005807590924418953
-      spade_2: -5836420081628057067
-      spade_3: -2243495726703175341
-      spade_4: 8922649838263582087
-      spade_5: -4863602469753380881
-      spade_6: 5114976238101812197
-      spade_7: 5647239627680844490
-      spade_8: -4193761403142013165
-      spade_9: 1069602806228107836
+      zweihander_0: 9013794135250100151
+      zweihander_1: -2498382004390371334
+      zweihander_2: -8051683369309597290
+      zweihander_3: 563630199076036897
+      zweihander_4: 7175224416859292577
+      zweihander_5: -7887623746422243704
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

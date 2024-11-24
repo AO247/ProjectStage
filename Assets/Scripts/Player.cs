@@ -100,6 +100,7 @@ public class Player : MonoBehaviour
                     if(weapon.GetWeaponType() != 0)
                     {
                         animator.Play(weapon.GetWeaponType().ToString() + "_MOVE");
+                        print(weapon.GetWeaponType().ToString() + "_MOVE");
                     }
                     
 

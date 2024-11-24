@@ -22,6 +22,7 @@ public class WeaponPlayer : MonoBehaviour
     void Start()
     {
         animator = GameObject.FindWithTag("Player").GetComponent<Animator>();
+
     }
     public void Attack()
     {
@@ -31,6 +32,8 @@ public class WeaponPlayer : MonoBehaviour
             attackStop = true;
             baTime = beforeAttackTime;
             animator.Play(weaponType.ToString() + "_CIACH");
+            print(weaponType.ToString() + "_CIACH");
+
 
         }
 
