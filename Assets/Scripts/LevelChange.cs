@@ -5,7 +5,22 @@ using System.Threading.Tasks;
 public class LevelChange : MonoBehaviour
 {
     public Animator animator;
+    GameObject player;
 
+
+    private void Start()
+    {
+        player = GameObject.FindWithTag("Player");
+    }
+
+
+    private void Update()
+    {
+        if(player.GetComponent<HealthPlayer>().IsDead())
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
     public async void ChangeLevel()
     {
         //animator.Play("kurtyna_zaslon");

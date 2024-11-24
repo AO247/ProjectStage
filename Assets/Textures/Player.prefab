@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdefc724c64d8e8428c38758dc19182c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 4
   delay: 0
   beforeAttackTime: 0.2
   afterAttackTime: 1
@@ -643,7 +643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdefc724c64d8e8428c38758dc19182c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 4
   delay: 0
   beforeAttackTime: 0.2
   afterAttackTime: 1

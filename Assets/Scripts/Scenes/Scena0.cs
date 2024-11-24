@@ -139,7 +139,8 @@ public class Scena0 : MonoBehaviour
 
     }
     void Update()
-    {   if (!_done1)
+    {
+        if (!_done1)
         {
             if (source.isPlaying && source.clip == dialog1 && textShow.text == "")
             {

@@ -5094,7 +5094,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 10
-  standingTime: 2
+  standingTime: 4
   pool: {fileID: 2093779174505100333}
   blood: {fileID: 3964908464065596576}
   hit: {fileID: 595698153388960587}

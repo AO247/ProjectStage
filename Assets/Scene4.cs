@@ -116,7 +116,9 @@ public class Scena4 : MonoBehaviour
                 {
                     if (castleCount[0].GetComponent<HealthEnemy>().IsDead() && spawnedGuards.Count == 0)
                     {
-                        if (spawnedGuards.Count < 4)
+                        time += Time.deltaTime;
+
+                        if (time % 5 == 0) 
                         {
                             var positions = new List<Vector3>
                         {
@@ -133,9 +135,11 @@ public class Scena4 : MonoBehaviour
                                 spawnedGuards.Add(newGuard);
                             }
                         }
+                        
                     }
                     else if (castleCount[1].GetComponent<HealthEnemy>().IsDead() && spawnedGuards.Count == 0)
                     {
+                        
                         if (spawnedGuards.Count < 4)
                         {
                             var positions = new List<Vector3>
@@ -154,9 +158,6 @@ public class Scena4 : MonoBehaviour
                             }
                         }
                     }
-
-
-                    Dialog2_done();
 
                 }
             }

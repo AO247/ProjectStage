@@ -149,7 +149,6 @@ public class Scena3 : MonoBehaviour
         _done8 = true;
         textShow.text = "";
         Dialog9();
-        //levelChange.ChangeLevel();
     }
 
     private void Dialog9()
@@ -389,8 +388,19 @@ public class Scena3 : MonoBehaviour
             {
                 if (source.clip == dialog9)
                 {
+                    bool allDead = true;
+                    foreach (var pos in spawnedGuards)
+                    {
+                        if(!pos.GetComponent<HealthEnemy>().IsDead())
+                        {
+                            allDead = false;
+                        }
+                    }
+                    if (allDead)
+                    { 
+                        Dialog9_done();
 
-                    Dialog6_done();
+                    }
 
                 }
             }

@@ -1,8 +1,10 @@
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 
 public class Player : MonoBehaviour
 {
+    public DpadControl control;
     [SerializeField] float movSpeed = 6f;
     [SerializeField] float acceleration = 10f; // Jak szybko postaæ siê rozpêdza
     [SerializeField] WeaponPlayer weapon0;
@@ -18,37 +20,94 @@ public class Player : MonoBehaviour
     float knockTime = 0f;
     float finishTime = 0f;
     Animator animator;
-
+    private DpadControl dpad;
     private bool reverseControls = false;
     LevelChange levelChange;
+    float wp;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-      rb = GetComponent<Rigidbody2D>();  
-      rend = rb.GetComponent<SpriteRenderer>();
-      animator = GetComponent<Animator>();
-      health = GetComponent<HealthPlayer>();
+        rb = GetComponent<Rigidbody2D>();  
+        rend = rb.GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+        health = GetComponent<HealthPlayer>();
+        dpad = GetComponent<DpadControl>();
+
 
     }
     public void ChangeWeapon()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        var gamepad = Gamepad.current;
+        if (Input.GetKeyUp(KeyCode.JoystickButton5)){
+            if (wp < 4)
+            {
+                wp += 1;
+
+            }
+
+        }
+        if (Input.GetKeyUp(KeyCode.JoystickButton4)){
+            if (wp > 1)
+            {
+                wp -= 1;
+
+            }
+
+        }
+        if(wp == 1)
         {
             weapon = weapon1;
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        else if (wp == 2)
         {
             weapon = weapon2;
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        else if (wp == 3)
         {
             weapon = weapon3;
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        else if (wp == 4)
         {
             weapon = weapon4;
         }
+
+
+        //if (Input.GetKeyDown(KeyCode.Alpha1) )
+
+        //{
+        //    weapon = weapon1;
+            
+
+        //}
+        ////else if (dpad.IsUpPressed())
+        ////{
+        ////    weapon = weapon1;
+        ////}
+        //else if (Input.GetKeyDown(KeyCode.Alpha2))
+        //{
+        //    weapon = weapon2;
+        //}
+        ////else if (dpad.IsDownPressed())
+        ////{
+        ////    weapon = weapon2 ;
+        ////}
+        //else if (Input.GetKeyDown(KeyCode.Alpha3))
+        //{
+        //    weapon = weapon3;
+        //}
+        ////else if (dpad.IsRightPressed())
+        ////{
+        ////    weapon = weapon3 ;
+        ////}
+        //else if (Input.GetKeyDown(KeyCode.Alpha4))
+        //{
+        //    weapon = weapon4;
+        //}
+        ////else if (dpad.IsLeftPressed())
+        ////{
+        ////    weapon = weapon4 ;
+        ////}
 
     }
     // Update is called once per frame
