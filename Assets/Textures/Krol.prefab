@@ -9950,7 +9950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89f1c4833afc4084b9e584b31ed33197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movSpeed: 2
+  movSpeed: 0
   acceleration: 5
   weapon: {fileID: 3908653062777084672}
 --- !u!50 &2807259532098014817

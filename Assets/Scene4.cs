@@ -94,24 +94,6 @@ public class Scena4 : MonoBehaviour
         }
         else if (!_done2 && _done1)
         {
-            if (source.isPlaying && source.clip == dialog2 && textShow.text == "")
-            {
-                StartCoroutine(TypeText(text2.text, textShow, 0.05f));
-            }
-
-            if (!source.isPlaying)
-            {
-                if (source.clip == dialog2)
-                {
-                    Dialog2_done();
-
-                }
-            }
-        }
-
-       
-        else if (_done2)
-        {
             if (castleCount.Count < 1)
             {
                 var newPrincess = Instantiate(princess, new Vector3(2f, 0f, 0f), Quaternion.identity);
@@ -122,24 +104,62 @@ public class Scena4 : MonoBehaviour
                 var newKing = Instantiate(king, new Vector3(0f, 3f, 0f), Quaternion.identity);
                 castleCount.Add(newKing);
             }
-            if (spawnedGuards.Count < 4)
+
+            if (source.isPlaying && source.clip == dialog2 && textShow.text == "")
             {
-                var positions = new List<Vector3>
-                {
-
-                    new Vector3(-6f, 0f, 0f),
-                    new Vector3(6f, 0f, 0f),
-                    new Vector3(3f, 0f, 0f),
-                    new Vector3(2f, 0f, 0f),
-                };
-
-                foreach (var pos in positions)
-                {
-                    var newGuard = Instantiate(wiesniok, pos, Quaternion.identity);
-                    spawnedGuards.Add(newGuard);
-                }
+                StartCoroutine(TypeText(text2.text, textShow, 0.05f));
             }
 
+            if (!source.isPlaying)
+            {
+                if (source.clip == dialog2)
+                {
+                    if (castleCount[0].GetComponent<HealthEnemy>().IsDead() && spawnedGuards.Count == 0)
+                    {
+                        if (spawnedGuards.Count < 4)
+                        {
+                            var positions = new List<Vector3>
+                        {
+
+                            new Vector3(-6f, 0f, 0f),
+                            new Vector3(6f, 0f, 0f),
+                            new Vector3(3f, 0f, 0f),
+                            new Vector3(2f, 0f, 0f),
+                        };
+
+                            foreach (var pos in positions)
+                            {
+                                var newGuard = Instantiate(guard, pos, Quaternion.identity);
+                                spawnedGuards.Add(newGuard);
+                            }
+                        }
+                    }
+                    else if (castleCount[1].GetComponent<HealthEnemy>().IsDead() && spawnedGuards.Count == 0)
+                    {
+                        if (spawnedGuards.Count < 4)
+                        {
+                            var positions = new List<Vector3>
+                        {
+
+                            new Vector3(-6f, 0f, 0f),
+                            new Vector3(6f, 0f, 0f),
+                            new Vector3(3f, 0f, 0f),
+                            new Vector3(2f, 0f, 0f),
+                        };
+
+                            foreach (var pos in positions)
+                            {
+                                var newGuard = Instantiate(wiesniok, pos, Quaternion.identity);
+                                spawnedGuards.Add(newGuard);
+                            }
+                        }
+                    }
+
+
+                    Dialog2_done();
+
+                }
+            }
         }
 
     }
