@@ -97,7 +97,7 @@ public class Player : MonoBehaviour
                 }
                 if (!weapon.GetAttackStop())
                 {
-                    if(weapon.GetWeaponType() != -1)
+                    if(weapon.GetWeaponType() != 0)
                     {
                         animator.Play(weapon.GetWeaponType().ToString() + "_MOVE");
                     }
